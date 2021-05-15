@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
+import {
+	IoSunnyOutline,
+	IoMoonOutline,
+	IoMenuOutline,
+	IoCloseOutline,
+} from 'react-icons/io5';
 
 const Header = () => {
 	const [darkMode, setDarkMode] = useState(true);
 	const [showHeader, setShowHeader] = useState(false);
+	const [openMenu, setOpenMenu] = useState(false);
 	const router = useRouter();
 	const isHomePage = router.pathname === '/';
 
@@ -32,6 +38,27 @@ const Header = () => {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
+	const links = [
+		{
+			path: '/',
+			text: 'Home',
+		},
+		{
+			path: '/projects',
+			text: 'Projects',
+		},
+		{
+			path: '/articles',
+			text: 'Articles',
+		},
+		{
+			path: '/contact',
+			text: 'Contact',
+		},
+	];
+
+	console.log(openMenu);
+
 	return (
 		<header
 			className={`w-full h-header py-10 sticky top-0 left-0 flex justify-between items-center z-20 transition duration-300 ${
@@ -44,37 +71,39 @@ const Header = () => {
 					: 'text-white'
 			}`}
 		>
-			<div className="ml-6">
+			<div className="ml-6 hover:text-green-300">
 				<Link href="/">
 					<a>CM</a>
 				</Link>
 			</div>
 			<div className="w-full" />
-			<ul className="flex">
-				<li className="mr-6 hover:text-green-300">
-					<Link href="/">
-						<a>Home</a>
-					</Link>
-				</li>
-				<li className="mr-6 hover:text-green-300">
-					<Link href="/projects">
-						<a>Projects</a>
-					</Link>
-				</li>
-				<li className="mr-6 hover:text-green-300">
-					<Link href="/articles">
-						<a>Articles</a>
-					</Link>
-				</li>
-				<li className="mr-6 hover:text-green-300">
-					<Link href="/contact">
-						<a>Contact</a>
-					</Link>
-				</li>
+			<ul className="block pt-10 sm:pt-0 sm:flex">
+				{links &&
+					links.map((link, index) => (
+						<li
+							className={`sm:mr-6 sm:flex sm:relative hover:text-green-300 ${
+								openMenu ? `flex` : 'hidden'
+							}`}
+						>
+							<Link href={link.path}>
+								<a onClick={() => setOpenMenu(false)}>{link.text}</a>
+							</Link>
+						</li>
+					))}
 			</ul>
 			<button
+				onClick={() => setOpenMenu(!openMenu)}
+				className="focus:outline-none mr-6 flex sm:hidden hover:text-green-300"
+			>
+				{openMenu ? (
+					<IoCloseOutline size="1.8rem" />
+				) : (
+					<IoMenuOutline size="1.8rem" />
+				)}
+			</button>
+			<button
 				onClick={() => setDarkMode(!darkMode)}
-				className="focus:outline-none mr-6"
+				className="focus:outline-none mr-6 hover:text-green-300"
 			>
 				{darkMode ? (
 					<IoSunnyOutline size="1.8rem" />
