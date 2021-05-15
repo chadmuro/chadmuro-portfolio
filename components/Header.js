@@ -32,11 +32,9 @@ const Header = () => {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
-	console.log(showHeader);
-
 	return (
 		<header
-			className={`w-full h-20 sticky top-0 left-0 flex justify-between items-center z-20 py-10 transition duration-300 ${
+			className={`w-full h-header py-10 sticky top-0 left-0 flex justify-between items-center z-20 transition duration-300 ${
 				isHomePage
 					? 'bg-white dark:bg-gray-800 text-gray-800 dark:text-white'
 					: 'bg-transparent'
@@ -51,16 +49,7 @@ const Header = () => {
 					<a>CM</a>
 				</Link>
 			</div>
-			<button
-				onClick={() => setDarkMode(!darkMode)}
-				className="focus:outline-none"
-			>
-				{darkMode ? (
-					<IoSunnyOutline size="1.8rem" />
-				) : (
-					<IoMoonOutline size="1.8rem" />
-				)}
-			</button>
+			<div className="w-full" />
 			<ul className="flex">
 				<li className="mr-6 hover:text-green-300">
 					<Link href="/">
@@ -83,6 +72,16 @@ const Header = () => {
 					</Link>
 				</li>
 			</ul>
+			<button
+				onClick={() => setDarkMode(!darkMode)}
+				className="focus:outline-none mr-6"
+			>
+				{darkMode ? (
+					<IoSunnyOutline size="1.8rem" />
+				) : (
+					<IoMoonOutline size="1.8rem" />
+				)}
+			</button>
 		</header>
 	);
 };
