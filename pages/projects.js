@@ -1,5 +1,11 @@
+import Hero from '../components/Pages/Hero';
+
 const Projects = () => {
-	return <div>Projects</div>;
+	return (
+		<>
+			<Hero title="Projects" />
+		</>
+	);
 };
 
 export default Projects;

@@ -1,5 +1,11 @@
+import Hero from '../components/Pages/Hero';
+
 const Contact = () => {
-	return <div>Contact</div>;
+	return (
+		<>
+			<Hero title="contact me" />
+		</>
+	);
 };
 
 export default Contact;

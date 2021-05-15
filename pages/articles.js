@@ -1,5 +1,23 @@
+import Hero from '../components/Pages/Hero';
 const Articles = () => {
-	return <div>Articles</div>;
+	return (
+		<>
+			<Hero title="articles" />
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+			<div>Where am I???</div>
+		</>
+	);
 };
 
 export default Articles;
