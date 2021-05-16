@@ -11,7 +11,7 @@ const Layout = props => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Header />
-			<main className="flex flex-col flex-1 w-full bg-white dark:bg-gray-800 text-gray-800 dark:text-white transition duration-300">
+			<main className="flex flex-col items-center flex-1 w-full bg-white dark:bg-gray-800 text-gray-800 dark:text-white transition duration-300">
 				{props.children}
 			</main>
 			<Footer />

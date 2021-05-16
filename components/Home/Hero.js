@@ -6,10 +6,10 @@ const Hero = () => {
 	const router = useRouter();
 
 	return (
-		<div className="w-full flex flex-col flex-1 sm:flex-row justify-start sm:justify-around items-center px-8 py-10 sm:py-20">
+		<section className="w-full flex flex-col flex-1 sm:flex-row justify-center sm:justify-around items-center px-8 py-16 sm:py-32">
 			<div className="text-center sm:text-left">
 				<h1 className="uppercase text-5xl pb-10">
-					Hello, my name is <span className="text-green-300">Chad</span>.
+					Hello, my name is <span className="text-green-300">Chad</span>
 				</h1>
 				<h3>I'm a Frontend Developer living in Tokyo, Japan.</h3>
 				<h3 className="pb-10">
@@ -25,12 +25,12 @@ const Hero = () => {
 				<Image
 					src="/chad.png"
 					alt="Picture of me"
-					width={200}
-					height={200}
+					width={250}
+					height={250}
 					className="overflow-hidden rounded-full"
 				/>
 			</div>
-		</div>
+		</section>
 	);
 };
 
