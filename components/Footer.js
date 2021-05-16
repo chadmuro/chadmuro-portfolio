@@ -10,7 +10,7 @@ const Footer = () => {
 						className="mr-6 focus:outline-none text-gray-800 hover:text-gray-600"
 						href="https://github.com/chadmuro"
 						target="_blank"
-						rel="noreferrer"
+						rel="noopener noreferrer"
 					>
 						<FaGithub size="2em" />
 					</a>
@@ -18,7 +18,7 @@ const Footer = () => {
 						className="mr-6 focus:outline-none text-gray-800 hover:text-gray-600"
 						href="https://chadmuro.medium.com/"
 						target="_blank"
-						rel="noreferrer"
+						rel="noopener noreferrer"
 					>
 						<FaMedium size="2em" />
 					</a>
@@ -26,7 +26,7 @@ const Footer = () => {
 						className="focus:outline-none text-gray-800 hover:text-gray-600"
 						href="https://www.linkedin.com/in/chadmuro/"
 						target="_blank"
-						rel="noreferrer"
+						rel="noopener noreferrer"
 					>
 						<FaLinkedin size="2em" />
 					</a>

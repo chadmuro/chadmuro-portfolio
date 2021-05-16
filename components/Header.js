@@ -81,6 +81,7 @@ const Header = () => {
 				{links &&
 					links.map((link, index) => (
 						<li
+							key={link.text}
 							className={`sm:mr-6 sm:flex sm:relative hover:text-green-300 ${
 								openMenu ? `flex` : 'hidden'
 							}`}

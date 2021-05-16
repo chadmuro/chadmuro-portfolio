@@ -14,6 +14,7 @@ module.exports = {
 			},
 			spacing: {
 				header: '80px',
+				image: '56.25%',
 			},
 		},
 	},
