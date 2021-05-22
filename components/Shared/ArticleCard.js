@@ -3,7 +3,6 @@ const getDate = date => {
 };
 
 const ArticleCard = ({ post }) => {
-	console.log(post);
 	return (
 		<button className="w-100 max-w-xs bg-green-300 dark:bg-white text-gray-800 mb-10 mx-5 flex flex-col rounded-lg overflow-hidden group transform duration-300 hover:scale-105 focus:outline-none h-auto">
 			<a href={post.link} target="_blank" rel="noopener noreferrer">

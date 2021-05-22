@@ -16,15 +16,17 @@ export async function getStaticProps() {
 }
 
 const Articles = ({ posts }) => {
-	console.log(posts);
-
 	return (
 		<div className="w-full max-w-screen-2xl flex flex-col items-center py-36">
 			<Hero title="articles" />
-			<h2 className="pb-24 text-2xl">Recently Published Articles</h2>
-			<section className="flex flex-wrap justify-center items-stretch">
-				{posts &&
-					posts.map(post => <ArticleCard key={post.title} post={post} />)}
+			<section className="flex flex-col items-center">
+				<h2 className="pb-24 text-3xl text-center">
+					Recently Published Articles
+				</h2>
+				<div className="flex flex-wrap justify-center items-stretch">
+					{posts &&
+						posts.map(post => <ArticleCard key={post.title} post={post} />)}
+				</div>
 			</section>
 			<section className="pt-6">
 				<a

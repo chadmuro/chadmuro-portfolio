@@ -57,11 +57,9 @@ const Header = () => {
 		},
 	];
 
-	console.log(openMenu);
-
 	return (
 		<header
-			className={`w-full h-header py-10 sticky top-0 left-0 flex justify-between items-center z-20 transition duration-300 ${
+			className={`w-full h-header py-10 sticky top-0 left-0 flex justify-between items-center z-20 transition duration-300 z-30 ${
 				isHomePage
 					? 'bg-white dark:bg-gray-800 text-gray-800 dark:text-white'
 					: 'bg-transparent'

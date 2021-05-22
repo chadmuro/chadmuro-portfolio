@@ -7,6 +7,7 @@ module.exports = {
 				'hero-pattern': "url('/beach.jpg')",
 			}),
 			height: {
+				large: '30rem',
 				header: '80px',
 				footer: '80px',
 				hero: '500px',

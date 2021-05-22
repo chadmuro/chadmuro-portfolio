@@ -19,6 +19,7 @@ const Hero = () => {
 					text="See my projects"
 					onClick={() => router.push('/projects')}
 					className="mb-10 sm:mb-0"
+					type="button"
 				/>
 			</div>
 			<div className="rounded-full bg-green-300">
