@@ -34,7 +34,7 @@ const Articles = ({ posts }) => {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<Button text="See all articles" />
+					<Button text="See all articles" variant="primary" type="button" />
 				</a>
 			</section>
 		</div>

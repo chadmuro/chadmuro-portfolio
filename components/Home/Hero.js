@@ -20,6 +20,7 @@ const Hero = () => {
 					onClick={() => router.push('/projects')}
 					className="mb-10 sm:mb-0"
 					type="button"
+					variant="primary"
 				/>
 			</div>
 			<div className="rounded-full bg-green-300">
