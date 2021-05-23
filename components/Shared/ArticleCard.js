@@ -1,3 +1,5 @@
+import DescriptionBox from './DescriptionBox';
+
 const getDate = date => {
 	return date.split(' ')[0];
 };
@@ -20,12 +22,7 @@ const ArticleCard = ({ post }) => {
 					<p className="pb-4 text-sm">{getDate(post.pubDate)}</p>
 					<div className="flex flex-wrap items-start">
 						{post.categories.map(category => (
-							<div
-								key={category}
-								className="bg-yellow-200 w-auto mr-2 mb-2 px-2 py-1 italic text-xs"
-							>
-								{category}
-							</div>
+							<DescriptionBox key={category} text={category} />
 						))}
 					</div>
 				</div>

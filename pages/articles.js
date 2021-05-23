@@ -20,7 +20,7 @@ const Articles = ({ posts }) => {
 		<div className="w-full max-w-screen-2xl flex flex-col items-center py-36">
 			<Hero title="articles" />
 			<section className="flex flex-col items-center">
-				<h2 className="pb-24 text-3xl text-center">
+				<h2 className="pb-24 text-3xl sm:text-4xl text-center">
 					Recently Published Articles
 				</h2>
 				<div className="flex flex-wrap justify-center items-stretch">

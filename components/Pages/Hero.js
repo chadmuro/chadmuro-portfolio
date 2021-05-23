@@ -1,7 +1,7 @@
 const Hero = ({ title }) => {
 	return (
 		<>
-			<section className="w-full h-hero bg-hero-pattern bg-center bg-cover absolute top-0 left-0">
+			<section className="w-full h-hero bg-hero-pattern bg-center bg-cover bg-fixed absolute top-0 left-0">
 				<div className="w-full h-full bg-black opacity-50 absolute top-0 left-0" />
 				<h1 className="z-10 uppercase h-full text-6xl tracking-wider text-white flex justify-center items-center relative text-center">
 					{title}
