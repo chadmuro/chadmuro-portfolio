@@ -13,6 +13,7 @@ import {
 	SiMaterialUi,
 	SiTailwindcss,
 } from 'react-icons/si';
+import { motion } from 'framer-motion';
 import Title from '../Shared/Title';
 import Container from '../Shared/Container';
 
@@ -84,17 +85,51 @@ const techIcons = [
 	},
 ];
 
+const container = {
+	hidden: { opacity: 1, scale: 0 },
+	visible: {
+		opacity: 1,
+		scale: 1,
+		transition: {
+			delayChildren: 0.3,
+			staggerChildren: 0.2,
+		},
+	},
+};
+
+const item = {
+	hidden: { y: 20, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+	},
+};
+
 const Skills = () => {
 	return (
 		<Container>
 			<Title title="Tech Stack" home />
-			<section className="flex flex-wrap justify-center max-w-xl">
+			<motion.section
+				variants={container}
+				initial="hidden"
+				animate="visible"
+				className="flex flex-wrap justify-center max-w-xl"
+			>
 				{techIcons.map(techIcon => (
-					<div className="mx-4 mb-6" style={{ color: techIcon.color }}>
+					<motion.div
+						variants={item}
+						whileHover={{
+							scale: [1, 1.2],
+							rotate: [0, 15],
+							transition: { duration: 0.3 },
+						}}
+						className="mx-4 mb-6"
+						style={{ color: techIcon.color }}
+					>
 						{techIcon.logo}
-					</div>
+					</motion.div>
 				))}
-			</section>
+			</motion.section>
 		</Container>
 	);
 };

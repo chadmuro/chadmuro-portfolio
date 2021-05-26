@@ -1,6 +1,16 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Button from '../Shared/Button';
+
+const item = {
+	hidden: { y: 100, opacity: 0 },
+	visible: {
+		y: 0,
+		opacity: 1,
+		transition: { delay: 1 },
+	},
+};
 
 const Hero = () => {
 	const router = useRouter();
@@ -23,15 +33,21 @@ const Hero = () => {
 					variant="primary"
 				/>
 			</div>
-			<div className="rounded-full bg-green-300">
+			<motion.div
+				variants={item}
+				initial="hidden"
+				animate="visible"
+				className="rounded-full bg-green-300"
+			>
 				<Image
 					src="/chad.png"
 					alt="Picture of me"
 					width={250}
 					height={250}
+					priority
 					className="overflow-hidden rounded-full"
 				/>
-			</div>
+			</motion.div>
 		</section>
 	);
 };
