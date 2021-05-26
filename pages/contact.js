@@ -1,14 +1,15 @@
 import Hero from '../components/Pages/Hero';
 import ContactForm from '../components/Shared/ContactForm';
+import Container from '../components/Shared/Container';
 
 const Contact = () => {
 	return (
-		<div className="w-full max-w-screen-2xl flex flex-col items-center py-36">
+		<Container>
 			<Hero title="contact me" />
 			<section className="flex flex-col items-center justify-center w-full">
 				<ContactForm />
 			</section>
-		</div>
+		</Container>
 	);
 };
 

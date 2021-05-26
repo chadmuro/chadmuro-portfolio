@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Hero from '../components/Pages/Hero';
+import Container from '../components/Shared/Container';
+import Title from '../components/Shared/Title';
 import Button from '../components/Shared/Button';
 import ProjectCard from '../components/Shared/ProjectCard';
 
@@ -29,12 +31,10 @@ const projects = [
 
 const Projects = () => {
 	return (
-		<div className="w-full max-w-screen-2xl flex flex-col items-center py-36">
+		<Container>
 			<Hero title="Projects" />
 			<section className="flex flex-col items-center w-full">
-				<h2 className="pb-24 text-3xl sm:4xl text-center">
-					My Recent Projects
-				</h2>
+				<Title title="My Recent Projects" />
 				<div className="flex flex-wrap justify-center items-stretch w-full">
 					{projects &&
 						projects.map(project => (
@@ -51,7 +51,7 @@ const Projects = () => {
 					<Button text="See all projects" variant="primary" type="button" />
 				</a>
 			</section>
-		</div>
+		</Container>
 	);
 };
 
