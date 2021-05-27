@@ -12,6 +12,7 @@ import {
 	SiSass,
 	SiMaterialUi,
 	SiTailwindcss,
+	SiStorybook,
 } from 'react-icons/si';
 import { motion } from 'framer-motion';
 import Title from '../Shared/Title';
@@ -83,6 +84,11 @@ const techIcons = [
 		name: 'Tailwind CSS',
 		color: '#38B2AC',
 	},
+	{
+		logo: <SiStorybook size="4em" />,
+		name: 'Storybook',
+		color: '#FF4785',
+	},
 ];
 
 const container = {
@@ -117,6 +123,7 @@ const Skills = () => {
 			>
 				{techIcons.map(techIcon => (
 					<motion.div
+						key={techIcon.name}
 						variants={item}
 						whileHover={{
 							scale: [1, 1.2],
