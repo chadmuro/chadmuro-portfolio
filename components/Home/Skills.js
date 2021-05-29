@@ -22,23 +22,13 @@ import Container from '../Shared/Container';
 
 const techIcons = [
 	{
-		logo: <SiHtml5 size="4em" />,
-		name: 'HTML5',
-		color: '#E34F26',
-	},
-	{
-		logo: <SiCss3 size="4em" />,
-		name: 'CSS',
-		color: '#1572B6',
-	},
-	{
 		logo: <SiJavascript size="4em" />,
 		name: 'JavaScript',
 		color: '#F7DF1E',
 	},
 	{
 		logo: <SiTypescript size="4em" />,
-		name: 'Typescript',
+		name: 'TypeScript',
 		color: '#3178C6',
 	},
 	{
@@ -91,6 +81,16 @@ const techIcons = [
 		name: 'Storybook',
 		color: '#FF4785',
 	},
+	{
+		logo: <SiHtml5 size="4em" />,
+		name: 'HTML5',
+		color: '#E34F26',
+	},
+	{
+		logo: <SiCss3 size="4em" />,
+		name: 'CSS',
+		color: '#1572B6',
+	},
 ];
 
 const container = {
@@ -142,9 +142,10 @@ const Skills = () => {
 							rotate: [0, 15],
 							transition: { duration: 0.3 },
 						}}
-						className="mx-4 mb-6"
+						className="mx-4 mb-8 flex flex-col items-center"
 						style={{ color: techIcon.color }}
 					>
+						<h5 className="">{techIcon.name}</h5>
 						{techIcon.logo}
 					</motion.div>
 				))}

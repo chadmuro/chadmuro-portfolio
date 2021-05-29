@@ -4,7 +4,7 @@ import DescriptionBox from './DescriptionBox';
 const ProjectCard = ({ project }) => {
 	return (
 		<article className="w-full min-h-screen mb-10 mx-5 relative p-4 dark:border-white border-2 border-gray-800 rounded">
-			<div className="flex justify-center items-center flex-col sm:flex-row">
+			<div className="flex justify-center items-center flex-col sm:flex-row pb-4">
 				<div className="flex flex-col items-center w-full sm:w-1/2 py-4">
 					<h3 className="text-2xl sm:text-3xl text-center pb-8">
 						{RichText.asText(project.data.project_name)}
@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => {
 					<DescriptionBox key={tech.tech[0].text} text={tech.tech[0].text} />
 				))}
 			</div>
-			<div className="pb-8">
+			<div className="px-2 sm:px-8 pb-8">
 				<p>{RichText.asText(project.data.description)}</p>
 			</div>
 			<div className="flex flex-col items-center">
