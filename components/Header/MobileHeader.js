@@ -17,8 +17,8 @@ const MobileHeader = ({ darkMode, setDarkMode, showHeader }) => {
 	const isHomePage = router.pathname === '/';
 
 	const items = {
-		hidden: { y: -150, opacity: 0, transition: { duration: 0.5 } },
-		visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+		hidden: { y: -200, transition: { duration: 0.5 } },
+		visible: { y: 0, transition: { duration: 0.5 } },
 	};
 
 	const handleMenuClick = () => {

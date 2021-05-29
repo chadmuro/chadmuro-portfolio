@@ -5,7 +5,7 @@ import Title from '../Shared/Title';
 const Articles = ({ posts }) => {
 	return (
 		<div className="w-full relative mt-36 pb-20">
-			<section className="w-full h-hero bg-bg-pattern bg-center bg-cover bg-fixed absolute top-0 left-0">
+			<section className="w-full h-hero bg-bg-pattern bg-center bg-cover sm:bg-fixed absolute top-0 left-0">
 				<div className="w-full h-full bg-black opacity-50 absolute top-0 left-0" />
 				<div className="z-10 h-full tracking-wider text-white flex flex-col justify-center items-center relative text-center">
 					<Title title="Recent Articles" home />
