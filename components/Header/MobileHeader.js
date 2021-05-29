@@ -71,13 +71,12 @@ const MobileHeader = ({ darkMode, setDarkMode, showHeader }) => {
 							initial="hidden"
 							animate={controls}
 							key={link.text}
-							className={`absolute top-${
-								index * 8
-							} left-0 w-screen py-3 flex justify-center
+							className={`absolute left-0 w-screen py-3 flex justify-center
 							hover:text-green-300 bg-white dark:bg-gray-800 text-white
               ${isHomePage && `text-gray-800 dark:text-white`}
               ${openMenu && `text-gray-800 dark:text-white`}
               `}
+							style={{ top: `${index * 40}px` }}
 						>
 							<Link href={link.path}>
 								<a onClick={handleLinkClick}>{link.text}</a>
