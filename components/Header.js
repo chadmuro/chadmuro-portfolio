@@ -135,9 +135,6 @@ const Header = () => {
 			</div>
 			<div className="w-full" />
 			<ul
-				variants={items}
-				initial="hidden"
-				animate="visible"
 				className={`block pt-10 sm:pt-0 sm:flex ${
 					(isHomePage || showHeader) &&
 					'bg-white dark:bg-gray-800 text-gray-800 dark:text-white'
@@ -147,6 +144,7 @@ const Header = () => {
 					links.map((link, index) => (
 						<motion.li
 							variants={items}
+							initial="hidden"
 							animate={controls}
 							key={link.text}
 							className={`absolute top-${

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {
 	SiHtml5,
 	SiCss3,
@@ -14,7 +15,8 @@ import {
 	SiTailwindcss,
 	SiStorybook,
 } from 'react-icons/si';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import Title from '../Shared/Title';
 import Container from '../Shared/Container';
 
@@ -112,13 +114,23 @@ const item = {
 };
 
 const Skills = () => {
+	const controls = useAnimation();
+	const { ref, inView } = useInView();
+
+	useEffect(() => {
+		if (inView) {
+			controls.start('visible');
+		}
+	}, [controls, inView]);
+
 	return (
 		<Container>
 			<Title title="Tech Stack" home />
 			<motion.section
+				ref={ref}
 				variants={container}
 				initial="hidden"
-				animate="visible"
+				animate={controls}
 				className="flex flex-wrap justify-center max-w-xl"
 			>
 				{techIcons.map(techIcon => (
