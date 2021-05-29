@@ -1,17 +1,48 @@
+import { useState } from 'react';
 import Image from 'next/image';
+import { IoCloseOutline } from 'react-icons/io5';
 import { useForm } from 'react-hook-form';
 import Icons from './Icons';
 import Button from './Button';
 
 const ContactForm = () => {
+	const [posting, setPosting] = useState(false);
+	const [message, setMessage] = useState(null);
+	const [error, setError] = useState(null);
+
 	const {
+		reset,
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
 
+	const resetState = () => {
+		setError(null);
+		setMessage(null);
+	};
+
 	const onSubmit = data => {
-		console.log(data);
+		setPosting(true);
+		setError(null);
+		setMessage(null);
+
+		fetch('/api/contact', {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json, text/plain, */*',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		}).then(res => {
+			setPosting(false);
+			if (res.status === 200) {
+				setMessage('Message Sent!');
+				reset();
+			} else {
+				setError('An error occurred');
+			}
+		});
 	};
 
 	return (
@@ -34,7 +65,22 @@ const ContactForm = () => {
 					</div>
 				</div>
 			</div>
-			<div className="bg-green-300 text-gray-800 w-4/5 sm:w-2/5 h-96 sm:h-hero flex items-center justify-center relative">
+			<div className="bg-green-300 text-gray-800 w-4/5 sm:w-2/5 h-hero flex flex-col items-center justify-center relative">
+				{(error || message) && (
+					<p
+						className={`absolute top-5 left-50 flex justify-center text-white ${
+							error && 'bg-red-400'
+						} ${message && 'bg-green-600'} w-4/5 py-2`}
+					>
+						{error || message}
+						<button
+							className="absolute right-5 focus:outline-none"
+							onClick={resetState}
+						>
+							<IoCloseOutline size="1.5em" />
+						</button>
+					</p>
+				)}
 				<form
 					className="flex justify-center items-center flex-col w-full h-full"
 					onSubmit={handleSubmit(onSubmit)}
@@ -82,7 +128,7 @@ const ContactForm = () => {
 							required: 'Message is required',
 						})}
 					/>
-					<Button text="Send" type="submit" />
+					<Button text="Send" type="submit" disabled={posting} />
 				</form>
 				<a
 					className="absolute bottom-1 right-1"

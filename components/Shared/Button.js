@@ -1,4 +1,4 @@
-const Button = ({ text, onClick, className, type, variant }) => {
+const Button = ({ text, onClick, className, type, variant, disabled }) => {
 	return (
 		<button
 			className={`${
@@ -8,6 +8,7 @@ const Button = ({ text, onClick, className, type, variant }) => {
 			}  focus:outline-none focus:shadow-none px-6 py-3 rounded uppercase shadow-xl transition ${className}`}
 			onClick={onClick}
 			type={type}
+			disabled={disabled}
 		>
 			{text}
 		</button>
