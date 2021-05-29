@@ -17,7 +17,7 @@ const MobileHeader = ({ darkMode, setDarkMode, showHeader }) => {
 	const isHomePage = router.pathname === '/';
 
 	const items = {
-		hidden: { y: -200, transition: { duration: 0.5 } },
+		hidden: { y: -500, transition: { duration: 0.5 } },
 		visible: { y: 0, transition: { duration: 0.5 } },
 	};
 

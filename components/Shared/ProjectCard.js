@@ -1,3 +1,4 @@
+import { RichText } from 'prismic-reactjs';
 import DescriptionBox from './DescriptionBox';
 
 const ProjectCard = ({ project }) => {
@@ -6,10 +7,10 @@ const ProjectCard = ({ project }) => {
 			<div className="flex justify-center items-center flex-col sm:flex-row">
 				<div className="flex flex-col items-center w-full sm:w-1/2 py-4">
 					<h3 className="text-2xl sm:text-3xl text-center pb-8">
-						{project.name}
+						{RichText.asText(project.data.project_name)}
 					</h3>
 					<a
-						href={project.url}
+						href={RichText.asText(project.data.project_url)}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="hover:underline text-green-300 text-lg"
@@ -17,27 +18,39 @@ const ProjectCard = ({ project }) => {
 						View Project
 					</a>
 				</div>
-				<div className="w-full sm:w-1/2">{project.image}</div>
+				<div className="w-full sm:w-1/2">
+					<img
+						src={project.data.main_image.url}
+						alt={RichText.asText(project.data.project_name)}
+						height={project.data.main_image.dimensions.height}
+						width={project.data.main_image.dimensions.width}
+					/>
+				</div>
 			</div>
 			<div className="flex flex-wrap justify-center pb-8">
-				{project.tech.map(tech => (
-					<DescriptionBox text={tech} />
+				{project.data.tech_stack.map(tech => (
+					<DescriptionBox key={tech.tech[0].text} text={tech.tech[0].text} />
 				))}
 			</div>
 			<div className="pb-8">
-				<p>{project.description}</p>
+				<p>{RichText.asText(project.data.description)}</p>
 			</div>
 			<div className="flex flex-col items-center">
 				<h4 className="text-xl pb-2">Screenshots</h4>
 				<div className="flex flex-col items-center sm:flex-row">
-					{project.screenshots.map(screenshot => (
-						<div className="mb-8 mx-2">{screenshot}</div>
+					{project.data.screenshots.map(screenshot => (
+						<div key={screenshot.screenshot.alt} className="mb-8 mx-2">
+							<img
+								src={screenshot.screenshot.url}
+								alt={screenshot.screenshot.alt}
+							/>
+						</div>
 					))}
 				</div>
 			</div>
 			<div className="flex justify-center pb-8">
 				<a
-					href={project.github}
+					href={RichText.asText(project.data.project_github)}
 					target="_blank"
 					rel="noopener noreferrer"
 					className="hover:underline text-green-300 text-lg"
