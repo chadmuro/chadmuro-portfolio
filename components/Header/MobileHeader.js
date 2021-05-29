@@ -8,50 +8,13 @@ import {
 	IoMenuOutline,
 	IoCloseOutline,
 } from 'react-icons/io5';
-import { useWindowSize } from '../hooks/useWindowSize';
+import { links } from './links';
 
-const Header = () => {
-	const [darkMode, setDarkMode] = useState(true);
-	const [showHeader, setShowHeader] = useState(false);
+const MobileHeader = ({ darkMode, setDarkMode, showHeader }) => {
 	const [openMenu, setOpenMenu] = useState(false);
-	const router = useRouter();
 	const controls = useAnimation();
+	const router = useRouter();
 	const isHomePage = router.pathname === '/';
-	const width = useWindowSize();
-
-	const handleScroll = () => {
-		const position = window.pageYOffset;
-		if (position > 80) {
-			setShowHeader(true);
-		} else {
-			setShowHeader(false);
-		}
-	};
-
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll, { passive: true });
-
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
-
-	const links = [
-		{
-			path: '/',
-			text: 'Home',
-		},
-		{
-			path: '/projects',
-			text: 'Projects',
-		},
-		{
-			path: '/articles',
-			text: 'Articles',
-		},
-		{
-			path: '/contact',
-			text: 'Contact',
-		},
-	];
 
 	const items = {
 		hidden: { y: -150, opacity: 0, transition: { duration: 0.5 } },
@@ -60,68 +23,29 @@ const Header = () => {
 
 	const handleMenuClick = () => {
 		setOpenMenu(!openMenu);
-		if (openMenu && width < 640) {
+		if (openMenu) {
 			controls.start('hidden');
 		}
-		if (!openMenu && width < 640) {
+		if (!openMenu) {
 			controls.start('visible');
-		}
-		if (width > 640) {
-			controls.set('visible');
 		}
 	};
 
 	const handleLinkClick = () => {
 		setOpenMenu(false);
-		if (openMenu && width < 640) {
-			controls.start('hidden');
-		}
-		if (!openMenu && width < 640) {
-			controls.start('visible');
-		}
-		if (width >= 640) {
-			controls.set('visible');
-		}
+		controls.start('hidden');
 	};
 
 	const handleLogoClick = () => {
 		setOpenMenu(false);
-		if (width < 640) {
-			controls.start('hidden');
-		}
-		if (width >= 640) {
-			controls.set('visible');
-		}
+		controls.start('hidden');
 	};
-
-	useEffect(() => {
-		if (width < 640) {
-			controls.set('hidden');
-		} else {
-			controls.set('visible');
-		}
-	}, [width]);
-
-	useEffect(() => {
-		if (width >= 640 && openMenu) {
-			setOpenMenu(false);
-		}
-	}, [width]);
-
-	useEffect(() => {
-		if (darkMode) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
-		}
-	}, [darkMode]);
 
 	return (
 		<header
 			className={`w-full h-header py-10 sticky top-0 left-0 flex justify-between items-center z-20 transition duration-300 z-30 bg-transparent text-white ${
-				isHomePage && 'bg-white dark:bg-gray-800 text-gray-800 dark:text-white'
-			} ${
-				showHeader && 'bg-white dark:bg-gray-800 text-gray-800 dark:text-white'
+				(isHomePage || showHeader) &&
+				'bg-white dark:bg-gray-800 text-gray-800 dark:text-white'
 			}`}
 		>
 			<div
@@ -135,7 +59,7 @@ const Header = () => {
 			</div>
 			<div className="w-full" />
 			<ul
-				className={`block pt-10 sm:pt-0 sm:flex ${
+				className={`block pt-10 ${
 					(isHomePage || showHeader) &&
 					'bg-white dark:bg-gray-800 text-gray-800 dark:text-white'
 				}`}
@@ -150,10 +74,8 @@ const Header = () => {
 							className={`absolute top-${
 								index * 8
 							} left-0 w-screen py-3 flex justify-center
-							sm:mr-6 sm:relative sm:top-0 sm:left-0 sm:p-0 hover:text-green-300 sm:w-min bg-white dark:bg-gray-800 sm:bg-transparent text-white
+							hover:text-green-300 bg-white dark:bg-gray-800 text-white
               ${isHomePage && `text-gray-800 dark:text-white`}
-              ${!isHomePage && `sm:bg-transparent sm:dark:bg-transparent`} 
-              ${showHeader && 'sm:text-gray-800 sm:dark:text-white'}
               ${openMenu && `text-gray-800 dark:text-white`}
               `}
 						>
@@ -165,7 +87,7 @@ const Header = () => {
 			</ul>
 			<button
 				onClick={handleMenuClick}
-				className={`focus:outline-none mr-6 flex sm:hidden hover:text-green-300 z-10 ${
+				className={`focus:outline-none mr-6 flex hover:text-green-300 z-10 ${
 					openMenu && 'text-gray-800 dark:text-white'
 				}`}
 			>
@@ -191,4 +113,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default MobileHeader;
