@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { IoCloseOutline } from 'react-icons/io5';
 import Button from './Button';
@@ -43,15 +42,17 @@ const Form = ({ home }) => {
 
 	return (
 		<div
-			className={`bg-green-300 text-gray-800 w-4/5 max-w-md h-hero flex flex-col items-center justify-center relative ${!home && 'sm:w-2/5'}`}
+			className={`bg-green-300 text-gray-800 w-4/5 max-w-md h-hero flex flex-col items-center justify-center relative ${
+				!home && 'sm:w-2/5'
+			}`}
 		>
 			<a
-				className="absolute top-6 transform hover:scale-110 duration-300"
 				href="https://ipugram.web.app/"
 				target="_blank"
 				rel="noopener noreferrer"
+				className="absolute top-6 transform hover:scale-110 duration-300"
 			>
-				<Image src="/ipu-transparent.png" alt="ipu" height={35} width={35} />
+				<img src="/ipu-transparent.png" alt="ipu" height={35} width={35} />
 			</a>
 			<form
 				className="flex justify-center items-center flex-col w-full h-full"
