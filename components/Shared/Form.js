@@ -47,14 +47,14 @@ const Form = ({ home }) => {
 				!home && 'sm:w-2/5'
 			}`}
 		>
-			<a
+			{/* <a
 				href="https://ipugram.web.app/"
 				target="_blank"
 				rel="noopener noreferrer"
 				className="absolute top-6 transform hover:scale-110 duration-300"
 			>
 				<Image src="/ipu-transparent.png" alt="ipu" height={35} width={35} />
-			</a>
+			</a> */}
 			<form
 				className="flex justify-center items-center flex-col w-full h-full"
 				onSubmit={handleSubmit(onSubmit)}
