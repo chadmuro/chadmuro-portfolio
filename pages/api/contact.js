@@ -3,18 +3,17 @@ require('dotenv').config();
 export default function (req, res) {
 	let nodemailer = require('nodemailer');
 	const transporter = nodemailer.createTransport({
-		port: 465,
-		host: 'smtp.gmail.com',
+		port: 587,
+		host: 'smtp-mail.outlook.com',
 		auth: {
-			user: 'chadmuroportfolio@gmail.com',
+			user: 'chadmurodev@outlook.com',
 			pass: process.env.password,
 		},
-		secure: true,
 	});
 
 	const mailData = {
-		from: 'chadmuroportfolio@gmail.com',
-		to: 'chadmurodev@gmail.com',
+		from: 'chadmurodev@outlook.com',
+		to: 'chadmurodev@outlook.com',
 		subject: `Message from ${req.body.name}`,
 		text: req.body.message + ' | Sent from: ' + req.body.email,
 		html: `<p>Name: ${req.body.name}</p><p>Sent from: ${req.body.email}</p><p>${req.body.message}</p>`,
