@@ -43,9 +43,7 @@ const Form = ({ home }) => {
 
 	return (
 		<div
-			className={`bg-green-300 text-gray-800 w-4/5 ${
-				!home && 'sm:w-2/5'
-			} max-w-md h-hero flex flex-col items-center justify-center relative`}
+			className={`bg-green-300 text-gray-800 w-4/5 max-w-md h-hero flex flex-col items-center justify-center relative ${!home && 'sm:w-2/5'}`}
 		>
 			<a
 				className="absolute top-6 transform hover:scale-110 duration-300"
