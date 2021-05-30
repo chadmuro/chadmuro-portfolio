@@ -16,7 +16,7 @@ const Hero = () => {
 	const router = useRouter();
 
 	return (
-		<section className="w-full flex flex-col flex-1 sm:flex-row justify-center sm:justify-around items-center px-8 py-16 sm:py-32">
+		<section className="w-full flex flex-col flex-1 sm:flex-row justify-center sm:justify-around items-center px-6 py-16 sm:py-32">
 			<div className="text-center sm:text-left">
 				<h1 className="uppercase text-5xl pb-10">
 					Hello, my name is <span className="text-green-300">Chad</span>
