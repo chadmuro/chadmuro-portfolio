@@ -50,9 +50,14 @@ const Form = ({ home }) => {
 				href="https://ipugram.web.app/"
 				target="_blank"
 				rel="noopener noreferrer"
-				className="absolute top-6 transform hover:scale-110 duration-300"
 			>
-				<img src="/ipu-transparent.png" alt="ipu" height={35} width={35} />
+				<img
+					src="/ipu-transparent.png"
+					alt="ipu"
+					height={35}
+					width={35}
+					className="top-6 transform hover:scale-110 duration-300 absolute"
+				/>
 			</a>
 			<form
 				className="flex justify-center items-center flex-col w-full h-full"
