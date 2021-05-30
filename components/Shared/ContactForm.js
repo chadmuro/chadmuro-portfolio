@@ -29,20 +29,16 @@ const ContactForm = () => {
 
 		fetch('/api/contact', {
 			method: 'POST',
-			headers: {
-				Accept: 'application/json, text/plain, */*',
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		}).then(res => {
-			setPosting(false);
-			if (res.status === 200) {
-				setMessage('Message Sent!');
-				reset();
-			} else {
-				setError('An error occurred');
-			}
-		});
+			body: JSON.stringify({ data }),
+		})
+			.then(res => {
+				setPosting(false);
+				setMessage('Message sent!');
+			})
+			.catch(err => {
+				setPosting(false);
+				setError('An error occured!');
+			});
 	};
 
 	return (
@@ -68,9 +64,9 @@ const ContactForm = () => {
 			<div className="bg-green-300 text-gray-800 w-4/5 sm:w-2/5 h-hero flex flex-col items-center justify-center relative">
 				{(error || message) && (
 					<p
-						className={`absolute top-5 left-50 flex justify-center text-white ${
+						className={`absolute top-5 left-50 flex justify-center text-white w-4/5 py-2 ${
 							error && 'bg-red-400'
-						} ${message && 'bg-green-600'} w-4/5 py-2`}
+						} ${message && 'bg-green-600'}`}
 					>
 						{error || message}
 						<button

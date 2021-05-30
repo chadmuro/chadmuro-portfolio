@@ -1,37 +1,25 @@
-require('dotenv').config();
+const mail = require('@sendgrid/mail');
 
-export default function (req, res) {
-	let nodemailer = require('nodemailer');
-	const transporter = nodemailer.createTransport({
-		port: 465,
-		host: 'smtp.gmail.com',
-		auth: {
-			user: 'chadmuroportfolio@gmail.com',
-			pass: process.env.password,
-		},
-		tls: {
-			requireTLS: true,
-		},
-	});
+mail.setApiKey(process.env.SENDGRID_API_KEY);
 
-	const mailData = {
-		from: 'chadmuroportfolio@gmail.com',
+export default (req, res) => {
+	const body = JSON.parse(req.body);
+
+	const message = `
+    Name: ${body.data.name}\r\n
+    Email: ${body.data.email}\r\n
+    Message: ${body.data.message}
+  `;
+
+	const data = {
 		to: 'chadmurodev@gmail.com',
-		subject: `Message from ${req.body.name}`,
-		text: req.body.message + ' | Sent from: ' + req.body.email,
-		html: `<p>Name: ${req.body.name}</p><p>Sent from: ${req.body.email}</p><p>${req.body.message}</p>`,
+		from: 'chadmuroportfolio@gmail.com',
+		subject: `New message from ${body.data.name}`,
+		text: message,
+		html: message.replace(/\r\n/g, '<br />'),
 	};
 
-	let message;
-	transporter.sendMail(mailData, function (err, info) {
-		if (err) {
-			console.log('error');
-			message = 'error';
-		} else {
-			console.log('sent');
-			message = 'sent';
-		}
-	});
+	mail.send(data);
 
-	res.send(message);
-}
+	res.status(200).json({ status: 'OK' });
+};
