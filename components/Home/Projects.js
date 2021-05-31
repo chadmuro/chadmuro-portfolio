@@ -10,7 +10,7 @@ const Projects = ({ projects }) => {
 	return (
 		<Container>
 			<Title title="Projects" home />
-			<section className="flex flex-wrap justify-center">
+			<section className="flex flex-col justify-center items-center">
 				{projects &&
 					projects.map(project => (
 						<article
