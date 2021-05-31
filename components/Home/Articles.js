@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Container from '../Shared/Container';
 import Title from '../Shared/Title';
 
 const Articles = ({ posts }) => {

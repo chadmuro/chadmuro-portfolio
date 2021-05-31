@@ -102,7 +102,9 @@ const Form = ({ home }) => {
 						required: 'Message is required',
 					})}
 				/>
-				<Button text="Send" type="submit" disabled={posting} />
+				<Button type="submit" disabled={posting}>
+					Send
+				</Button>
 			</form>
 			{(error || message) && (
 				<p

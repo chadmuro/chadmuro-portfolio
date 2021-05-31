@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Prismic from '@prismicio/client';
 import Hero from '../components/Pages/Hero';
 import Container from '../components/Shared/Container';
@@ -39,7 +38,9 @@ const Projects = ({ projects }) => {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<Button text="See all projects" variant="primary" type="button" />
+					<Button variant="primary" type="button">
+						See all Projects
+					</Button>
 				</a>
 			</section>
 		</Container>
