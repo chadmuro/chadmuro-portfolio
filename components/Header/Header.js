@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
 import { links } from './links';
@@ -17,7 +18,9 @@ const Header = ({ darkMode, setDarkMode, showHeader }) => {
 		>
 			<div className="ml-6 hover:text-green-300 z-10">
 				<Link href="/">
-					<a>CM</a>
+					<a>
+						<Image src="/cm.png" alt="logo" height={100} width={100} />
+					</a>
 				</Link>
 			</div>
 			<div className="w-full" />
