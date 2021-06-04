@@ -10,10 +10,12 @@ const Projects = ({ projects }) => {
 			<Title title="Projects" home />
 			<section className="flex flex-col justify-center items-center">
 				{projects &&
-					projects.map(project => (
+					projects.map((project, index) => (
 						<article
 							key={project.id}
-							className="flex flex-col items-center pb-24"
+							className={`flex flex-col items-center ${
+								index === 0 ? 'pb-24' : null
+							}`}
 						>
 							<h3 className="text-2xl">
 								{RichText.asText(project.data.project_name)}
@@ -24,27 +26,31 @@ const Projects = ({ projects }) => {
 								height={project.data.main_image.dimensions.height}
 								width={project.data.main_image.dimensions.width}
 							/>
-							<div className="flex flex-col sm:flex-row justify-evenly w-auto sm:w-full">
-								<Button variant="primary" className="mb-4 sm:mb-0">
+							<div className="flex flex-col sm:flex-row justify-evenly w-full">
+								<Button variant="primary" className="mb-4 sm:mb-0 mx-4">
 									<a
 										className="flex items-center justify-center"
 										href={RichText.asText(project.data.project_url)}
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<FaLaptop />
-										<span className="pl-4">View Project</span>
+										<div className="pr-2">
+											<FaLaptop />
+										</div>
+										<span>View Project</span>
 									</a>
 								</Button>
-								<Button variant="primary">
+								<Button variant="primary" className="mx-4">
 									<a
 										className="flex items-center justify-center"
 										href={RichText.asText(project.data.project_github)}
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										<FaGithub />
-										<span className="pl-4">View Source Code</span>
+										<div className="pr-2">
+											<FaGithub />
+										</div>
+										<span>View Source Code</span>
 									</a>
 								</Button>
 							</div>

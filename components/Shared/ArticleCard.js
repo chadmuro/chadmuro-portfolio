@@ -6,7 +6,7 @@ const getDate = date => {
 
 const ArticleCard = ({ post }) => {
 	return (
-		<button className="w-100 max-w-xs bg-green-300 dark:bg-white text-gray-800 mb-10 mx-5 flex flex-col rounded-lg overflow-hidden group transform duration-300 hover:scale-105 focus:outline-none h-auto">
+		<button className="w-100 max-w-xs bg-gray-800 dark:bg-white text-white dark:text-gray-800 mb-10 mx-5 flex flex-col rounded-lg overflow-hidden group transform duration-300 hover:scale-105 focus:outline-none h-auto">
 			<a href={post.link} target="_blank" rel="noopener noreferrer">
 				<div className="w-full relative pt-image overflow-hidden">
 					<img
