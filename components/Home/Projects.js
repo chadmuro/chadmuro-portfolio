@@ -5,8 +5,6 @@ import Title from '../Shared/Title';
 import Button from '../Shared/Button';
 
 const Projects = ({ projects }) => {
-	console.log(projects);
-
 	return (
 		<Container>
 			<Title title="Projects" home />

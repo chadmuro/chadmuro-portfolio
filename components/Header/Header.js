@@ -19,7 +19,7 @@ const Header = ({ darkMode, setDarkMode, showHeader }) => {
 			<div className="ml-6 hover:text-green-300 z-10">
 				<Link href="/">
 					<a>
-						<Image src="/cm.png" alt="logo" height={100} width={100} />
+						<Image src="/cm.png" alt="logo" height={80} width={80} />
 					</a>
 				</Link>
 			</div>

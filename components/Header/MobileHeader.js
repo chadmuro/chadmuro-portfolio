@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { motion, useAnimation } from 'framer-motion';
 import {
@@ -54,7 +55,9 @@ const MobileHeader = ({ darkMode, setDarkMode, showHeader }) => {
 				}`}
 			>
 				<Link href="/">
-					<a onClick={handleLogoClick}>CM</a>
+					<a onClick={handleLogoClick}>
+						<Image src="/cm.png" alt="logo" height={80} width={80} />
+					</a>
 				</Link>
 			</div>
 			<div className="w-full" />
