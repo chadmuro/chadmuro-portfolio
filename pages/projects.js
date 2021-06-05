@@ -19,7 +19,6 @@ export async function getStaticProps() {
 }
 
 const Projects = ({ projects }) => {
-	console.log(projects.results);
 	return (
 		<Container>
 			<Hero title="Projects" />

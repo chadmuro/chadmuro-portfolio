@@ -5,8 +5,8 @@ import Form from './Form';
 const ContactForm = () => {
 	return (
 		<article className="flex flex-col sm:flex-row w-full items-center justify-center">
-			<div className="w-4/5 sm:w-2/5">
-				<div className="w-full h-80 sm:h-hero relative">
+			<div className="w-4/5 max-w-md sm:w-2/5">
+				<div className="h-80 sm:h-hero relative">
 					<Image
 						src="/ipu.jpg"
 						alt="my dog"

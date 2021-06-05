@@ -8,6 +8,7 @@ const Form = ({ home }) => {
 	const [posting, setPosting] = useState(false);
 	const [message, setMessage] = useState(null);
 	const [error, setError] = useState(null);
+	const [ipugram, setIpugram] = useState(false);
 
 	const {
 		reset,
@@ -47,14 +48,24 @@ const Form = ({ home }) => {
 				!home && 'sm:w-2/5'
 			}`}
 		>
-			{/* <a
-				href="https://ipugram.web.app/"
-				target="_blank"
-				rel="noopener noreferrer"
-				className="absolute top-6 transform hover:scale-110 duration-300"
+			<button
+				type="click"
+				onClick={() => setIpugram(!ipugram)}
+				className="absolute top-6 left-6 sm:left-10 transform hover:scale-110 duration-300 focus:outline-none"
 			>
 				<Image src="/ipu-transparent.png" alt="ipu" height={35} width={35} />
-			</a> */}
+			</button>
+			{ipugram && (
+				<a
+					href="https://ipugram.web.app/"
+					target="_blank"
+					rel="noopener noreferrer"
+					className="absolute top-7 left-16 sm:left-20 transform hover:underline"
+				>
+					See more pics of me!
+				</a>
+			)}
+
 			<form
 				className="flex justify-center items-center flex-col w-full h-full"
 				onSubmit={handleSubmit(onSubmit)}
