@@ -43,6 +43,7 @@ const Header = ({ darkMode, setDarkMode, showHeader }) => {
 					))}
 			</ul>
 			<button
+				aria-label="Dark Mode"
 				onClick={() => setDarkMode(!darkMode)}
 				className="focus:outline-none mr-6 hover:text-green-300 z-10"
 			>

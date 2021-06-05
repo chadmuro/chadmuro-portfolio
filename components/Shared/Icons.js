@@ -24,6 +24,7 @@ const Icons = ({ dark }) => {
 			{dark &&
 				icons.map(icon => (
 					<a
+						aria-label={icon.name}
 						key={icon.name}
 						className="mx-3 focus:outline-none text-gray-800 hover:text-gray-600"
 						href={icon.link}

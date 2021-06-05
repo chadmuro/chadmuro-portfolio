@@ -46,8 +46,8 @@ const Layout = props => {
 	return (
 		<div className="min-h-screen flex flex-col justify-center items-start bg-white dark:bg-gray-800 text-gray-800 dark:text-white ">
 			<Head>
-				<title>Chad Murobayashi</title>
-				<meta name="chadmuro" content="Chad Murobayashi Portfolio" />
+				<title>Chad Murobayashi | Portfolio</title>
+				<meta name="description" content="Chad Murobayashi Portfolio" />
 				<link rel="icon" href="/favicon.ico" />
 				{/* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

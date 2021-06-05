@@ -88,6 +88,7 @@ const MobileHeader = ({ darkMode, setDarkMode, showHeader }) => {
 					))}
 			</ul>
 			<button
+				aria-label="Menu"
 				onClick={handleMenuClick}
 				className={`focus:outline-none mr-6 flex hover:text-green-300 z-10 ${
 					openMenu && 'text-gray-800 dark:text-white'
