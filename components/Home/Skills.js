@@ -125,7 +125,7 @@ const Skills = () => {
 
 	return (
 		<Container>
-			<Title title="Tech Stack" home />
+			<Title title="Skills" home />
 			<motion.section
 				ref={ref}
 				variants={container}
@@ -145,7 +145,7 @@ const Skills = () => {
 						className="mx-4 mb-8 flex flex-col items-center"
 						style={{ color: techIcon.color }}
 					>
-						<h5 className="">{techIcon.name}</h5>
+						<h4 className="">{techIcon.name}</h4>
 						{techIcon.logo}
 					</motion.div>
 				))}
