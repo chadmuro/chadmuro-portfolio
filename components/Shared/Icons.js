@@ -26,7 +26,7 @@ const Icons = ({ dark }) => {
 					<a
 						aria-label={icon.name}
 						key={icon.name}
-						className="mx-3 focus:outline-none text-gray-800 hover:text-gray-600"
+						className="mx-3 focus:outline-none outline-none text-gray-800 hover:text-gray-600"
 						href={icon.link}
 						target="_blank"
 						rel="noopener noreferrer"
@@ -38,7 +38,7 @@ const Icons = ({ dark }) => {
 				icons.map(icon => (
 					<a
 						key={icon.name}
-						className="mx-3 focus:outline-none text-white hover:text-gray-300"
+						className="mx-3 focus:outline-none outline-none text-white hover:text-gray-300"
 						href={icon.link}
 						target="_blank"
 						rel="noopener noreferrer"

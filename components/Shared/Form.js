@@ -51,7 +51,7 @@ const Form = ({ home }) => {
 			<button
 				type="click"
 				onClick={() => setIpugram(!ipugram)}
-				className="absolute top-6 left-6 sm:left-10 transform hover:scale-110 duration-300 focus:outline-none"
+				className="absolute top-6 left-6 sm:left-10 transform hover:scale-110 duration-300 focus:outline-none outline-none"
 			>
 				<Image src="/ipu-transparent.png" alt="ipu" height={35} width={35} />
 			</button>
