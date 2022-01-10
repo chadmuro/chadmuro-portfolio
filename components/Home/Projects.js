@@ -26,7 +26,7 @@ const Projects = ({ projects }) => {
                 height={project.data.main_image.dimensions.height}
                 width={project.data.main_image.dimensions.width}
               />
-              <div className="flex flex-col sm:flex-row sm:justify-evenly w-full">
+              <div className="flex flex-col sm:flex-row sm:justify-center w-full">
                 <Button variant="primary" className="mb-4 sm:mb-0 mx-4">
                   <a
                     className="flex items-center justify-center"
@@ -36,17 +36,6 @@ const Projects = ({ projects }) => {
                   >
                     <FaLaptop />
                     <span className="pl-2">View Project</span>
-                  </a>
-                </Button>
-                <Button variant="primary" className="mx-4">
-                  <a
-                    className="flex items-center justify-center"
-                    href={RichText.asText(project.data.project_github)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                    <span className="pl-2">View Source Code</span>
                   </a>
                 </Button>
               </div>

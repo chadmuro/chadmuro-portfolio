@@ -55,8 +55,20 @@ const ProjectCard = ({ project }) => {
           rel="noopener noreferrer"
           className="hover:underline text-green-300 text-lg"
         >
-          View Source Code
+          {RichText.asText(project.data.project_github_2)
+            ? 'View UI Source Code'
+            : 'View Source Code'}
         </a>
+        {RichText.asText(project.data.project_github_2) && (
+          <a
+            href={RichText.asText(project.data.project_github_2)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline text-green-300 text-lg ml-8"
+          >
+            View Server Source Code
+          </a>
+        )}
       </div>
     </article>
   );
